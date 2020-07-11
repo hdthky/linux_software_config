@@ -1,0 +1,21 @@
+{
+	"cmd": ["python","-u","$file_name"],
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$", 
+	"selector": "source.python",
+	"shell": false,
+	"working_dir" : "$file_path", 
+
+	"env": {"PYTHONIOENCODING": "utf-8"},
+
+	"variants":
+	[
+		{
+			"name": "Python2 shell",
+			"cmd": ["gnome-terminal", "-e", "bash -c \"python2 -u $file_name ; read -p '\nPress any key to continue...'\""]
+		},
+		{
+			"name": "Python3 shell",
+			"cmd": ["gnome-terminal", "-e", "bash -c \"python3 -u $file_name ; read -p '\nPress any key to continue...'\""]
+		}
+	]
+}
